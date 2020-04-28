@@ -1,0 +1,42 @@
+﻿@page
+@model RazorRagesTutorial.Pages.TaskList.AddModel
+
+<br />
+<h2 class="text-info">Add New Task</h2><br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Task.Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Task.Name" class="form-control" />
+            </div>
+            <span asp-validation-for="Task.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Task.Description"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Task.Description" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-1 offset-10">
+                <input type="submit" value="Save" class="btn btn-success form-control" />
+            </div>
+            <div class="col-1">
+                <a asp-page="Index" class="btn btn-danger form-control">Exit</a>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+@section Scripts{ 
+    <partial name="_ValidationScriptsPartial" />
+}
